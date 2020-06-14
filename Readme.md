@@ -1,6 +1,6 @@
 # Личный проект «Таинственный отпуск» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
-* Студент: Владимирова Анастасия](https://up.htmlacademy.ru/animation/1/user/1310799).
+* Студент: [Владимирова Анастасия](https://up.htmlacademy.ru/animation/1/user/1310799).
 
 ---
 
