@@ -6,6 +6,26 @@
       opacity: 1;
       pointer-events: auto;
     }
+
+    .social-block__link {
+      &--fb {
+        transition: opacity 0.4s linear, transform 0.8s linear;
+        transform: translateY(-20%);
+        opacity: 1;
+      }
+
+      &--insta {
+        transition: opacity 0.4s linear 0.2s, transform 0.8s linear;
+        transform: translateY(-20%);
+        opacity: 1;
+      }
+
+      &--vk {
+        transition: opacity 0.4s linear 0.4s, transform 0.8s linear;
+        transform: translateY(-20%);
+        opacity: 1;
+      }
+    }
   }
 }
 
@@ -17,6 +37,8 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
+  transition: transform 0.5s linear;
+
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -44,11 +66,26 @@
     height: 2.2rem;
   }
 
+  &:hover {
+    .social-block--active & {
+      color: $c-dark;
+      transform: scale(1.1);
+
+      &::before {
+        background-color: #ffffff;
+        border: 2px solid #ffffff;
+      }
+    }
+  }
+
   &:hover,
   .social-block--active & {
-    color: $c-purple;
+    color: #ffffff;
+    transform: scale(1);
 
     &::before {
+      background-color: $c-purple;
+      border: 2px solid $c-purple;
       width: 112.5%;
       height: 112.5%;
     }
@@ -89,6 +126,7 @@
   margin-top: 1.5rem;
   opacity: 0;
   pointer-events: none;
+  transition: opacity 0.5s linear;
 
   @media (min-width: $stop-scaling) {
     margin-top: 15px;
@@ -134,7 +172,6 @@
 
   &:focus-within {
     opacity: 1;
-    pointer-events: auto;
   }
 
   .social-block--active & {
@@ -207,6 +244,8 @@
   }
 
   &--fb {
+    opacity: 0;
+
     svg {
       width: 0.8rem;
       height: 1.7rem;
@@ -219,6 +258,8 @@
   }
 
   &--insta {
+    opacity: 0;
+
     svg {
       width: 1.5rem;
       height: 1.5rem;
@@ -231,6 +272,8 @@
   }
 
   &--vk {
+    opacity: 0;
+
     svg {
       width: 1.7rem;
       height: 1rem;
