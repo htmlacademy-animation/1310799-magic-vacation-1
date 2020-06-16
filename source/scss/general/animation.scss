@@ -1,7 +1,7 @@
 @keyframes fade-in-up {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(1.5rem);
   }
 
   to {
@@ -13,7 +13,7 @@
 @keyframes fade-in-right-left {
   from {
     opacity: 0;
-    transform: translateX(20px);
+    transform: translateX(1.5rem);
   }
 
   to {

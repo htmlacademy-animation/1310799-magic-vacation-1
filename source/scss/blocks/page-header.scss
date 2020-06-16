@@ -249,7 +249,8 @@
       width: 0;
       height: 2px;
       background-color: $c-light;
-      left: 0;
+      left: auto;
+      right: 0;
       transition: width  0.5s ease-in-out;
 
       @media (max-width: $tablet) and (orientation: portrait) {
@@ -280,6 +281,8 @@
       &::after {
         opacity: 1;
         width: 100%;
+        right: auto;
+        left: 0;
         background-color: $c-purple;
       }
     }
