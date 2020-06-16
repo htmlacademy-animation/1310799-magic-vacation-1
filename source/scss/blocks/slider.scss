@@ -97,6 +97,23 @@
   font-size: 1.8rem;
   line-height: 2rem;
 
+  .swiper-slide-active & {
+    animation-name: fade-in-right-left;
+    animation-duration: 0.25s;
+    animation-delay: 0.25s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+  }
+
+  .swiper-slide-next & {
+    animation-name: fade-in-right-left;
+    animation-duration: 0.25s;
+    animation-timing-function: linear;
+    animation-delay: 0.5s;
+    animation-fill-mode: both;
+  }
+
+
   @media (min-width: $stop-scaling) {
     margin-top: 36px;
     max-width: 340px;
