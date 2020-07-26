@@ -52,3 +52,35 @@
     transform: translateY(-100%);
   }
 }
+
+@keyframes scale-in {
+  0% {
+    transform: scale(0);
+  }
+
+  70% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rules-btn-appearance {
+  0% {
+    width: 1.1rem;
+    color: transparent;
+    opacity: 0;
+  }
+
+  70% {
+    color: transparent;
+  }
+
+  100% {
+    width: 21rem;
+    color: $c-dark;
+    opacity: 1;
+  }
+}
