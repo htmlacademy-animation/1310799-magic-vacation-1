@@ -303,6 +303,31 @@
   background-size: cover;
   background-position: center;
 
+  &.active {
+    .slider__controls {
+      animation-name: fade-in;
+      animation-duration: 500ms;
+      animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+      animation-delay: 500ms;
+      animation-fill-mode: both;
+    }
+
+    .slider__control {
+      animation-duration: 500ms;
+      animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+      animation-delay: 500ms;
+      animation-fill-mode: both;
+
+      &--next {
+        animation-name: rotate-left;
+      }
+
+      &--prev {
+        animation-name: rotate-right;
+      }
+    }
+  }
+
   @media (orientation: portrait) {
     background-size: auto calc(100vh - 13.8rem), 100% 25rem;
     background-position: top center, bottom center;
