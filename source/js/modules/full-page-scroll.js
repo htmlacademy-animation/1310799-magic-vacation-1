@@ -42,15 +42,20 @@ export default class FullPageScroll {
   changePageDisplay() {
     const currentScreen = document.querySelector(`.screen.active`);
     const animationBackground = document.querySelector(`.animation-background`);
+    const prizesIntro = document.querySelector(`.prizes__intro-img`);
     this.changeActiveMenuItem();
     if (currentScreen && currentScreen.id === `story` && this.screenElements[this.activeScreen].id === `prizes`) {
       animationBackground.classList.add(`active`);
       setTimeout(() => {
         this.toogleDisplay();
         animationBackground.classList.remove(`active`);
+        if (prizesIntro) {
+          prizesIntro.src = `img/primary-award.svg`;
+        }
       }, this.ANIMATION_TIMEOUT);
     } else {
       this.toogleDisplay();
+      prizesIntro.src = ``;
     }
   }
 
