@@ -38,6 +38,12 @@ window.addEventListener(`load`, () => {
   setTimeout(() => {
     animationTopDate.runAnimation();
   }, 700);
+
+
+  if (window.location.hash.slice(1) === `prizes`) {
+    const prizesIntro = document.querySelector(`.prizes__intro-img`);
+    prizesIntro.src = `img/primary-award.svg`;
+  }
 });
 
 document.body.addEventListener(`screenChanged`, (e) => {

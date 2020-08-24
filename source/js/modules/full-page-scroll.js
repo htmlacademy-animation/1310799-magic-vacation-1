@@ -46,6 +46,9 @@ export default class FullPageScroll {
     this.changeActiveMenuItem();
     if (currentScreen && currentScreen.id === `story` && this.screenElements[this.activeScreen].id === `prizes`) {
       animationBackground.classList.add(`active`);
+      if (prizesIntro) {
+        prizesIntro.src = ``;
+      }
       setTimeout(() => {
         this.toogleDisplay();
         animationBackground.classList.remove(`active`);
@@ -55,7 +58,6 @@ export default class FullPageScroll {
       }, this.ANIMATION_TIMEOUT);
     } else {
       this.toogleDisplay();
-      prizesIntro.src = ``;
     }
   }
 
