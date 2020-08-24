@@ -10323,6 +10323,9 @@ class FullPageScroll {
     this.changeActiveMenuItem();
     if (currentScreen && currentScreen.id === `story` && this.screenElements[this.activeScreen].id === `prizes`) {
       animationBackground.classList.add(`active`);
+      if (prizesIntro) {
+        prizesIntro.src = ``;
+      }
       setTimeout(() => {
         this.toogleDisplay();
         animationBackground.classList.remove(`active`);
@@ -10332,7 +10335,6 @@ class FullPageScroll {
       }, this.ANIMATION_TIMEOUT);
     } else {
       this.toogleDisplay();
-      prizesIntro.src = ``;
     }
   }
 
@@ -10771,6 +10773,12 @@ window.addEventListener(`load`, () => {
   setTimeout(() => {
     animationTopDate.runAnimation();
   }, 700);
+
+
+  if (window.location.hash.slice(1) === `prizes`) {
+    const prizesIntro = document.querySelector(`.prizes__intro-img`);
+    prizesIntro.src = `img/primary-award.svg`;
+  }
 });
 
 document.body.addEventListener(`screenChanged`, (e) => {
