@@ -41,8 +41,10 @@ window.addEventListener(`load`, () => {
 
 
   if (window.location.hash.slice(1) === `prizes`) {
-    const prizesIntro = document.querySelector(`.prizes__intro-img`);
-    prizesIntro.src = `img/primary-award.svg`;
+    const primaryAward = document.querySelector(`.prizes__icon--journeys`);
+    primaryAward.src = `img/primary-award.svg`;
+    setTimeout(() => {
+    }, 2000);
   }
 });
 
