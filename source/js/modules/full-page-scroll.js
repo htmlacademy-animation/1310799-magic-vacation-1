@@ -1,4 +1,6 @@
 import throttle from 'lodash/throttle';
+import {startPrizesAnimation} from './prize-animation.js';
+import {delay} from "./delay";
 
 export default class FullPageScroll {
   constructor() {
@@ -39,23 +41,16 @@ export default class FullPageScroll {
     this.emitChangeDisplayEvent();
   }
 
-  changePageDisplay() {
+  async changePageDisplay() {
     const currentScreen = document.querySelector(`.screen.active`);
     const animationBackground = document.querySelector(`.animation-background`);
-    const primaryAward = document.querySelector(`.prizes__icon--journeys`);
     this.changeActiveMenuItem();
     if (currentScreen && currentScreen.id === `story` && this.screenElements[this.activeScreen].id === `prizes`) {
       animationBackground.classList.add(`active`);
-      if (primaryAward) {
-        primaryAward.src = ``;
-      }
-      setTimeout(() => {
-        this.toogleDisplay();
-        animationBackground.classList.remove(`active`);
-        if (primaryAward) {
-          primaryAward.src = `img/primary-award.svg`;
-        }
-      }, this.ANIMATION_TIMEOUT);
+      await delay(this.ANIMATION_TIMEOUT);
+      this.toogleDisplay();
+      animationBackground.classList.remove(`active`);
+      await startPrizesAnimation();
     } else {
       this.toogleDisplay();
     }
